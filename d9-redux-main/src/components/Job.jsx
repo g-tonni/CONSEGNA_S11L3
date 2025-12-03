@@ -1,7 +1,6 @@
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
-import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Job = ({ data }) => {
@@ -16,8 +15,6 @@ const Job = ({ data }) => {
       return false
     }
   }
-
-  const [icona, setIcona] = useState(getName(data.company_name))
   const dispatch = useDispatch()
 
   return (
@@ -30,8 +27,7 @@ const Job = ({ data }) => {
         <button
           className="bg-transparent border-0 fs-4"
           onClick={() => {
-            setIcona(!icona)
-            if (icona) {
+            if (getName(data.company_name)) {
               dispatch({
                 type: 'REMOVE_FROM_FAVLIST',
                 payload: data.company_name,
@@ -44,7 +40,7 @@ const Job = ({ data }) => {
             }
           }}
         >
-          {icona ? <FaHeart /> : <FaRegHeart />}
+          {getName(data.company_name) ? <FaHeart /> : <FaRegHeart />}
         </button>
       </Col>
       <Col xs={9}>

@@ -1,5 +1,4 @@
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -16,7 +15,6 @@ const SingleFav = function ({ fav }) {
     }
   }
 
-  const [icona, setIcona] = useState(getName(fav))
   const dispatch = useDispatch()
 
   return (
@@ -27,14 +25,13 @@ const SingleFav = function ({ fav }) {
       <button
         className="bg-transparent border-0 fs-4 d-flex align-items-center"
         onClick={() => {
-          setIcona(!icona)
           dispatch({
             type: 'REMOVE_FROM_FAVLIST',
             payload: fav,
           })
         }}
       >
-        {icona ? <FaHeart /> : <FaRegHeart />}
+        {getName(fav) ? <FaHeart /> : <FaRegHeart />}
       </button>
     </div>
   )
