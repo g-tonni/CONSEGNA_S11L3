@@ -11,6 +11,7 @@ const FavList = function () {
     <Container className="my-5">
       <Row className="justify-content-center">
         <Col xs={12} md={8}>
+          <h1 className="display-4 mb-4">Favourites List</h1>
           {favList.map((element, i) => {
             return <SingleFav key={i} fav={element} />
           })}

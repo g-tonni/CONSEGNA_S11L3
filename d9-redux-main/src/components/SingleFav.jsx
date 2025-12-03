@@ -19,7 +19,7 @@ const SingleFav = function ({ fav }) {
 
   return (
     <div className="d-flex justify-content-between align-items-center p-4 border border-dark rounded-4 shadow-sm mb-3">
-      <Link className="m-0" to={`/${fav}`}>
+      <Link className="m-0 link-az fs-5" to={`/${fav}`}>
         {fav}
       </Link>
       <button

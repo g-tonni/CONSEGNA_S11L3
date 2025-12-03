@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.link-az {
+  text-decoration: none;
+  font-weight: 800;
+  color: black;
+  margin: 0;
+}
+
+.link-job {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}

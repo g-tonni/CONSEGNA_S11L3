@@ -19,13 +19,12 @@ const Job = ({ data }) => {
 
   return (
     <Row
-      className="mx-0 mt-3 p-3"
+      className="mx-0 mt-3 p-3 rounded-4 shadow-sm"
       style={{ border: '1px solid #00000033', borderRadius: 4 }}
     >
-      <Col xs={3}>
-        <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+      <Col xs={3} className="d-flex align-items-center">
         <button
-          className="bg-transparent border-0 fs-4"
+          className="bg-transparent border-0 fs-4 d-flex flex-column justify-content-center me-2"
           onClick={() => {
             if (getName(data.company_name)) {
               dispatch({
@@ -42,9 +41,17 @@ const Job = ({ data }) => {
         >
           {getName(data.company_name) ? <FaHeart /> : <FaRegHeart />}
         </button>
+        <Link to={`/${data.company_name}`} className="link-az">
+          {data.company_name}
+        </Link>
       </Col>
-      <Col xs={9}>
-        <a href={data.url} target="_blank" rel="noreferrer">
+      <Col xs={9} className="d-flex align-items-center">
+        <a
+          href={data.url}
+          target="_blank"
+          rel="noreferrer"
+          className="link-job"
+        >
           {data.title}
         </a>
       </Col>
